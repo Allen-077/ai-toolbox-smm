@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Writing Prompt</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+  #generate-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  #generate-btn:hover {
+    background-color: #45a049;
+  }
+  #prompt-display {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 100px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+  <h1>Daily Writing Prompt</h1>
+  <button id="generate-btn">Generate Prompt</button>
+  <div id="prompt-display"></div>
+<script>
+  const prompts = [
+    'Write about a childhood memory.',
+    'Describe your dream vacation.',
+    'Write a letter to your future self.',
+    'Describe the most inspiring person you know.',
+    'Write about a time you overcame a challenge.',
+    'If you could live anywhere, where would it be and why?',
+    'Write about a memorable meal.',
+    'Describe a dream you had recently.',
+    'Write about your favorite hobby.',
+    'If you could meet any historical figure, who would it be?' 
+  ];
+
+  const button = document.getElementById('generate-btn');
+  const display = document.getElementById('prompt-display');
+
+  button.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    display.textContent = prompts[randomIndex];
+  });
+</script>
+</body>
+</html>
